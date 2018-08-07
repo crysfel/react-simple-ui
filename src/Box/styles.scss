@@ -1,0 +1,48 @@
+@import 'theme/colors';
+@import 'theme/spacing';
+
+.base {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble {
+  composes: PHM;
+  composes: PVM;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+.gridColum {
+  flex-direction: column;
+}
+
+.gridRow {
+  flex-direction: row;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.center {
+  align-items: center;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.stretch {
+  display: flex;
+  align-items: stretch;
+}

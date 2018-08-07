@@ -1,3 +1,5 @@
-import React from 'react';
+import Box from './Box';
 
-console.log(React.Component);
+export {
+  Box,
+};

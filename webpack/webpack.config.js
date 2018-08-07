@@ -11,5 +11,42 @@ module.exports = {
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
+    'classnames': 'classnames',
+    'prop-types': 'prop-types',
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: { loader: 'babel-loader' },
+    }, {
+      test: /\.scss$/,
+      use: [
+        { loader: 'style-loader' },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[hash:base64:5]',
+            sourceMap: true,
+            minimize: true,
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+            includePaths: ['src'],
+          },
+        }
+      ],
+    }]
+  },
+  resolve: {
+    modules: [
+      'node_modules',
+      'src'
+    ],
   },
 };
